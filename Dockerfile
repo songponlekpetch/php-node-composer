@@ -33,7 +33,7 @@ RUN docker-php-ext-configure imap \
         --with-imap \
         --with-kerberos \
         --with-imap-ssl \
-    && docker-php-ext-install pdo_mysql exif pcntl bcmath gd zip imap
+    && docker-php-ext-install pdo_mysql exif bcmath gd zip imap
 COPY  ./php.ini "$PHP_INI_DIR/php.ini"
 
 # Get Composer
