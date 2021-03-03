@@ -25,6 +25,21 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     zip \
     unzip
 
+# PDF
+RUN apt-get install -y --allow-unauthenticated \
+    libgtk2.0-0 \
+    libgdk-pixbuf2.0-0 \
+    libfontconfig1 \
+    libxrender1 \
+    libx11-6 \
+    libglib2.0-0 \
+    libxft2 \
+    libfreetype6 \
+    libc6 \
+    zlib1g \
+    libstdc++6 \
+    libgcc1
+
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
