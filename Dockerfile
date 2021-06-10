@@ -60,6 +60,9 @@ COPY --from=node_base /usr/local/bin/node /usr/local/bin/node
 RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 RUN npm install -g yarn
 
+# Install nginx
+RUN apt install -y nginx
+
 # Create system user to run Composer and Artisan Commands and Node command
 RUN useradd -G www-data,root -u $UID -d /home/$USER $USER
 RUN mkdir -p /home/$USER/.composer && \
