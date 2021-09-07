@@ -61,5 +61,8 @@ COPY --from=node_base /usr/local/bin/node /usr/local/bin/node
 RUN ln -s /usr/local/lib/node_modules/npm/bin/npm-cli.js /usr/local/bin/npm
 RUN npm install -g yarn
 
+# Install Nginx
+RUN apt install -y nginx
+
 # Set working directory
 WORKDIR /var/www
